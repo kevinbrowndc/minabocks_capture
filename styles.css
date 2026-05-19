@@ -90,13 +90,37 @@ nav {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: 720px;
   padding: 80px 6%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 50px;
   align-items: center;
-  background: linear-gradient(90deg, white 0%, #f4f9ff 55%, #eaf4ff 100%);
+  background-image: url('/images/hero.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.82) 32%,
+    rgba(255,255,255,0.48) 58%,
+    rgba(255,255,255,0.08) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content,
+.phone-card {
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -173,47 +197,12 @@ h2 {
   justify-content: center;
 }
 
-.phone {
-  width: 340px;
-  min-height: 620px;
-  border: 13px solid #111;
-  border-radius: 42px;
-  background: #fff;
-  padding: 34px 18px 20px;
-  box-shadow: 0 30px 80px rgba(7, 95, 228, 0.22);
-}
-
-.phone-top {
-  width: 120px;
-  height: 18px;
-  background: #111;
-  border-radius: 0 0 18px 18px;
-  margin: -34px auto 24px;
-}
-
-.business-name {
-  text-align: center;
-  font-weight: 800;
-  margin-bottom: 28px;
-}
-
-.bubble {
-  max-width: 80%;
-  padding: 13px 15px;
-  border-radius: 16px;
-  margin-bottom: 14px;
-  line-height: 1.35;
-  font-size: 14px;
-}
-
-.bubble.gray {
-  background: #eef1f5;
-}
-
-.bubble.blue {
-  background: var(--blue);
-  color: white;
-  margin-left: auto;
+.phone-image,
+.service-image,
+.owensboro-image {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
 }
 
 .section {
@@ -263,33 +252,9 @@ h2 {
 }
 
 .mock-site {
-  background: linear-gradient(rgba(6, 22, 51, 0.8), rgba(6, 22, 51, 0.85)),
-    url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80");
-  color: white;
   border-radius: 18px;
-  padding: 40px;
-  min-height: 320px;
+  overflow: hidden;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
-}
-
-.mock-site h3 {
-  font-size: 34px;
-  max-width: 420px;
-}
-
-.mock-site button {
-  background: var(--blue);
-  color: white;
-  border: none;
-  padding: 13px 20px;
-  border-radius: 8px;
-  font-weight: 800;
-}
-
-.mock-header {
-  font-size: 13px;
-  font-weight: 900;
-  margin-bottom: 60px;
 }
 
 .pricing {
@@ -360,6 +325,11 @@ button {
   font-size: 16px;
 }
 
+.owensboro-section {
+  padding: 70px 6%;
+  background: white;
+}
+
 footer {
   padding: 30px 6%;
   background: #020b1d;
@@ -395,33 +365,13 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .phone {
-    width: 310px;
+  h1 {
+    font-size: 56px;
+  }
 
-    .hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.88) 0%,
-    rgba(255,255,255,0.72) 35%,
-    rgba(255,255,255,0.28) 60%,
-    rgba(255,255,255,0.05) 100%
-  );
-  z-index: 1;
-}
-
-.hero-content,
-.phone-card {
-  position: relative;
-  z-index: 2;
-}
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   footer {
