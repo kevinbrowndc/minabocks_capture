@@ -22,6 +22,8 @@ a {
   color: inherit;
 }
 
+/* HEADER */
+
 .header {
   height: 84px;
   padding: 0 6%;
@@ -32,7 +34,7 @@ a {
   background: white;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .logo {
@@ -89,6 +91,8 @@ nav {
   font-weight: 800;
 }
 
+/* HERO */
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -98,7 +102,7 @@ nav {
   grid-template-columns: 1.05fr 0.95fr;
   gap: 50px;
   align-items: center;
-  background-image: url('/images/hero.png');
+  background-image: url("/images/hero.png");
   background-size: cover;
   background-position: center;
 }
@@ -109,10 +113,10 @@ nav {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(255,255,255,0.92) 0%,
-    rgba(255,255,255,0.82) 32%,
-    rgba(255,255,255,0.48) 58%,
-    rgba(255,255,255,0.08) 100%
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.78) 36%,
+    rgba(255, 255, 255, 0.38) 62%,
+    rgba(255, 255, 255, 0.06) 100%
   );
   z-index: 1;
 }
@@ -121,6 +125,10 @@ nav {
 .phone-card {
   position: relative;
   z-index: 2;
+}
+
+.hero-content {
+  max-width: 720px;
 }
 
 .eyebrow {
@@ -192,18 +200,59 @@ h2 {
   font-weight: 700;
 }
 
+/* PHONE MOCKUP */
+
 .phone-card {
   display: flex;
   justify-content: center;
 }
 
-.phone-image,
-.service-image,
-.owensboro-image {
-  width: 100%;
-  border-radius: 18px;
-  display: block;
+.phone {
+  width: 360px;
+  min-height: 620px;
+  background: #f8fafc;
+  border: 12px solid #111827;
+  border-radius: 42px;
+  padding: 26px 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
 }
+
+.phone-top {
+  width: 120px;
+  height: 22px;
+  background: #111827;
+  border-radius: 0 0 18px 18px;
+  margin: -26px auto 24px;
+}
+
+.business-name {
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 22px;
+  font-size: 22px;
+}
+
+.bubble {
+  padding: 16px 18px;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+.bubble.gray {
+  background: #e5e7eb;
+  color: #111827;
+  margin-right: 36px;
+}
+
+.bubble.blue {
+  background: var(--blue);
+  color: white;
+  margin-left: 36px;
+}
+
+/* GENERAL SECTIONS */
 
 .section {
   padding: 70px 6%;
@@ -242,6 +291,8 @@ h2 {
   line-height: 1.5;
 }
 
+/* FEATURES */
+
 .split-section {
   padding: 70px 6%;
   background: var(--light);
@@ -252,10 +303,36 @@ h2 {
 }
 
 .mock-site {
+  background: linear-gradient(rgba(6, 22, 51, 0.8), rgba(6, 22, 51, 0.85)),
+    url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80");
+  color: white;
   border-radius: 18px;
-  overflow: hidden;
+  padding: 40px;
+  min-height: 320px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
 }
+
+.mock-site h3 {
+  font-size: 34px;
+  max-width: 420px;
+}
+
+.mock-site button {
+  background: var(--blue);
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.mock-header {
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 60px;
+}
+
+/* PRICING */
 
 .pricing {
   padding: 70px 6%;
@@ -287,6 +364,8 @@ h2 {
   font-size: 18px;
   color: var(--muted);
 }
+
+/* CONTACT */
 
 .contact {
   padding: 80px 6%;
@@ -325,10 +404,7 @@ button {
   font-size: 16px;
 }
 
-.owensboro-section {
-  padding: 70px 6%;
-  background: white;
-}
+/* FOOTER */
 
 footer {
   padding: 30px 6%;
@@ -342,6 +418,8 @@ footer {
 footer p {
   color: #b8c7dd;
 }
+
+/* MOBILE */
 
 @media (max-width: 900px) {
   .header {
@@ -361,8 +439,21 @@ footer p {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .hero::before {
+    background: rgba(255, 255, 255, 0.86);
+  }
+
   .steps {
     grid-template-columns: 1fr;
+  }
+
+  .phone {
+    width: 310px;
+    min-height: auto;
   }
 
   h1 {
